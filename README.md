@@ -1,2 +1,2 @@
 # Server Programs for sysadmins
-Server Programs 
+Server Program for sysadmins
