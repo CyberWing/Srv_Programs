@@ -51,17 +51,30 @@ utilizationandmostexpensiveprocesses(){
     echo "vmstat:"
     vmstat 1 5
 }
+
+horbar(){
+        ccount=0
+        until [ $ccount -eq $(tput cols) ]
+        do
+                echo -n "="
+                ccount=`expr $ccount + 1`
+        done
+        echo 
+}
+
 # Functions Ends
 
 # Menu Starts
-
+while true
+do
+horbar
 echo "1. Machine Information"
 echo "2. Currently Connected Connections"
 echo "3. Last logins"
 echo "4. Disk and RAM usage"
 echo "5. Utilization and Most Expensive Processes"
 read -p "Choose a number: " userinput
-
+horbar
 # Menu Ends
 
 # Input filtering and output starts
@@ -78,5 +91,5 @@ case $userinput in
 	;;
 	*) echo "ERROR INPUT: Please choose 1 to 5"
 esac
-
+done
 # EOF
