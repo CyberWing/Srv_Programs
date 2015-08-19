@@ -92,7 +92,7 @@ case $userinput in
 	;;
 	6) exit 0
 	;;
-	*) echo "ERROR INPUT: Please choose 1 to 5"
+	*) echo "ERROR INPUT: Please choose 1 to 6"
 esac
 done
 # EOF
