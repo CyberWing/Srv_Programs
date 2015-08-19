@@ -68,6 +68,8 @@ case $choice in
 		;;
 	7) deleteitem
 		;;
+	8) aboutscript
+		;;
 	99) exit
 		;;
 	*) echo "ERROR INPUT!"
