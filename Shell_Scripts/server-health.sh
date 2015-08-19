@@ -1,15 +1,27 @@
 #!/bin/bash
 
+# Functions Starts
+
+machineinfo(){
     echo "Checking Your Linux Machine Information"
     date;
     echo "uptime:"
     uptime
+}
+
+currentlyconnected(){
     echo "Currently connected:"
     w
     echo "--------------------"
+}
+
+lastlogins(){
     echo "Last logins:"
     last -a |head -3
     echo "--------------------"
+}
+
+diskandramusage(){
     echo "Disk and memory usage:"
     df -h | xargs | awk '{print "Free/total disk: " $11 " / " $9}'
     free -m | xargs | awk '{print "Free/total memory: " $17 " / " $8 " MB"}'
@@ -19,6 +31,9 @@
     echo -n "OOM errors since $start_log :" $oom
     echo ""
     echo "--------------------"
+}
+
+utilizationandmostexpensiveprocesses(){
     echo "Utilization and most expensive processes:"
     top -b |head -3
     echo
@@ -35,5 +50,33 @@
     echo "--------------------"
     echo "vmstat:"
     vmstat 1 5
+}
+# Functions Ends
 
+# Menu Starts
 
+echo "1. Machine Information"
+echo "2. Currently Connected Connections"
+echo "3. Last logins"
+echo "4. Disk and RAM usage"
+echo "5. Utilization and Most Expensive Processes"
+read -p "Choose a number: " userinput
+
+# Menu Ends
+
+# Input filtering and output starts
+case $userinput in
+	1) machineinfo
+	;;
+	2) currentlyconnected
+	;;
+	3) lastlogins
+	;;
+	4) diskandramusage
+	;;
+	5) utilizationandmostexpensiveprocesses
+	;;
+	*) echo "ERROR INPUT: Please choose 1 to 5"
+esac
+
+# EOF
