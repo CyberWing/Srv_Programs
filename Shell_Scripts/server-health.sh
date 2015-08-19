@@ -1,4 +1,6 @@
 #!/bin/bash
+
+    echo "Checking Your Linux Machine Information"
     date;
     echo "uptime:"
     uptime
