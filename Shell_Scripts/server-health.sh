@@ -73,6 +73,7 @@ echo "2. Currently Connected Connections"
 echo "3. Last logins"
 echo "4. Disk and RAM usage"
 echo "5. Utilization and Most Expensive Processes"
+echo "6. Exit Program"
 read -p "Choose a number: " userinput
 horbar
 # Menu Ends
@@ -88,6 +89,8 @@ case $userinput in
 	4) diskandramusage
 	;;
 	5) utilizationandmostexpensiveprocesses
+	;;
+	6) exit 0
 	;;
 	*) echo "ERROR INPUT: Please choose 1 to 5"
 esac
