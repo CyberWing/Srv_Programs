@@ -5,39 +5,57 @@ createtodo(){
 	read -p "Description: " tododesc
 	read -p "Deadline: " deadline
 	echo "[ ] $todotitle 		|$deadline		|$tododesc" >> todolist.txt
+        echo "-----------------------------------------------------------------"
 }
 
 listalltodo(){
+        echo "-----------------------------------------------------------------"
+	echo "    Title		|DeadLine	|Description"
+	echo "-----------------------------------------------------------------"
 	cat todolist.txt
+        echo "-----------------------------------------------------------------"
 }
 
 listundonelist(){
+        echo "-----------------------------------------------------------------"
+        echo "    Title         |DeadLine       |Description"
+        echo "-----------------------------------------------------------------"
 	cat todolist.txt | grep "\[ \]"
+        echo "-----------------------------------------------------------------"
 }
 
 listdonelist(){
+        echo "-----------------------------------------------------------------"
+        echo "    Title         |DeadLine       |Description"
+        echo "-----------------------------------------------------------------"
 	cat todolist.txt | grep "\[x\]"
+        echo "-----------------------------------------------------------------"
 }
 
 markdone(){
 	read -p "Line Number: " lineno
 	sed -i "${lineno}s/\[ \]/[x]/" todolist.txt
+        echo "-----------------------------------------------------------------"
 }
 
 markundone(){
 	read -p "Line Number: " lineno2
 	sed -i "${lineno2}s/\[x\]/[ ]/" todolist.txt
+        echo "-----------------------------------------------------------------"
 }
 
 deleteitem(){
 	read -p "Line Number: " lineno3
 	sed -i "${lineno3}d" todolist.txt
+        echo "-----------------------------------------------------------------"
 }
 
 aboutscript(){
+        echo "-----------------------------------------------------------------"
 	echo "This todo script is written by Yan Naing Myint (Orca Krilozona)"
 	echo "This script is released as it is without any warranty and you are free to do whatever you want with this"
 	echo "Any bug found in this script shall be reported back to yannaing@cyberwings.asia"
+        echo "-----------------------------------------------------------------"
 }
 
 while true
