@@ -100,7 +100,7 @@ if(login=="yes") or (login=="YES"):
       chk_pubip()
    if(input=="7"):
       chk_login()
-elif (input=="no") or (input=="NO"):
+elif (login=="no") or (login=="NO"):
    print "Thank you for your using server health check script..."
 else:
    print "Invalid Input Key!"
