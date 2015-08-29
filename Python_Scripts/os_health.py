@@ -94,7 +94,7 @@ def main():
       if(input=="3"):
          chk_info()
       if(input=="4"):
-         utilize_expensive_process()
+         utilize_expensive_process() 
       if(input=="5"):
          current_socket_con()
       if(input=="6"):
