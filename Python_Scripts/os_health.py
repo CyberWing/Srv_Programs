@@ -35,9 +35,8 @@ def exit():
 
 def nmap():
    print "checking TCP ports:"
-   a=os.popen('nmap -p- -T4 127.0.0.1')
-   scan=a.read()
-   print scan
+   chk_port="nmap -p- -T4 127.0.0.1"
+   os.system(chk_port)
    print "======================================="
 
 def lastlogin():
@@ -81,29 +80,33 @@ def chk_login():
    print "Show who is logged on and what they are doing:"
    os.system("w -s")
 
-login=raw_input("Do you want to run this script?yes or no? ")
-if(login=="yes") or (login=="YES"):
-   input=raw_input("Enter your input: ")
-   if(input=="0") or (input=="exit"):
-      exit()
-   if(input=="1"):
-      nmap()
-   if(input=="2"):
-      lastlogin()
-   if(input=="3"):
-      chk_info()
-   if(input=="4"):
-      utilize_expensive_process()
-   if(input=="5"):
-      current_socket_con()
-   if(input=="6"):
-      chk_pubip()
-   if(input=="7"):
-      chk_login()
-elif (login=="no") or (login=="NO"):
-   print "Thank you for your using server health check script..."
-else:
-   print "Invalid Input Key!"
+
+def main():
+   login=raw_input("Do you want to run this script?yes or no? ")
+   if(login=="yes") or (login=="YES"):
+      input=raw_input("Enter your input: ")
+      if(input=="0") or (input=="exit"):
+         exit()
+      if(input=="1"):
+         nmap()
+      if(input=="2"):
+         lastlogin()
+      if(input=="3"):
+         chk_info()
+      if(input=="4"):
+         utilize_expensive_process()
+      if(input=="5"):
+         current_socket_con()
+      if(input=="6"):
+         chk_pubip()
+      if(input=="7"):
+         chk_login()
+   elif (login=="no") or (login=="NO"):
+      print "Thank you for your using server health check script..."
+   else:
+      print "Invalid Input Key!"
+
+main()
 
 #DONE
 
